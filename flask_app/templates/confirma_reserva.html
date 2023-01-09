@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %} prueba extends {% endblock %}
+
+{% block content %}
+
+<!-- sección de formulario -->
+<div class="gtco-section">
+	<div class="gtco-container">
+		
+			
+			<div class="col-md-8 animate-box">
+				<h3 style="margin-top: 50px;">Por favor ingresa tus datos de contacto</h3>
+			
+				<form action="/procesar/reserva/{{ id }}" , method="post">
+												
+					<div class="row form-group">
+						<div class="col-md-12">
+							<label for="email">Email</label>
+							<input required type="email" name="email" id="email" class="form-control" placeholder="Email">
+						</div>
+					</div>
+
+					<div class="row form-group">
+						<div class="col-md-12">
+							<label for="number">Teléfono</label>
+							<input required type="number" name="telefono" id="telefono" class="form-control"
+								placeholder="al menos 8 caracteres">
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<input type="submit" value="Confirmar reserva" class="btn btn-primary btn-lg" a>
+					</div>
+				</form>
+			</div>
+			
+		</div>
+
+	</div>
+</div>	
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

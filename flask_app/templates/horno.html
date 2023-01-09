@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block title %} crear horno {% endblock %}
+
+{% block content %}
+
+
+<!-- sección de formulario -->
+<div class="gtco-section">
+	<div class="gtco-container">
+		<div class="row">
+			<div class="col-md-12 animate-box">
+				<h3 style="margin-top: 50px;">Segundo paso: registra tu horno</h3>
+				<form action="/procesar/horno" , method="post">
+					<div class="row form-group">
+						<div class="col-md-12">
+							<label for="nombre">Nombre</label>
+							<input required type="text" name="nombre" id="nombre" class="form-control"
+								placeholder="Nombre del horno">
+						</div>
+					</div>					
+					<div class="row form-group">
+						<div class="col-md-6">
+							<label for="temperatura_min">Temperatura mínima</label>
+							<input required type="number" name="temperatura_min" id="temperatura_min" class="form-control"
+								placeholder="En °C">
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-md-6" >
+							<label for="temperatura_max">Temperatura máxima</label>
+							<input required type="text" name="temperatura_max" id="temperatura_max" class="form-control"
+								placeholder="En °C">
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-md-4">
+							<label for="alto">Alto</label>
+							<input required type="number" name="alto" id="alto"
+								class="form-control" placeholder="Medida en cms.">
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-md-4">
+							<label for="ancho">Ancho</label>
+							<input required type="number" name="ancho" id="ancho" class="form-control"
+								placeholder="Medida en cms.">
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-md-4">
+							<label for="fondo">Fondo</label>
+							<input required type="number" name="fondo" id="fondo" class="form-control"
+								placeholder="Medida en cms.">
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-md-4">
+							<label for="costo_bandeja">Precio por bandeja</label>
+							<input required type="number" name="costo_bandeja" id="costo_bandeja"
+								class="form-control" placeholder="Precio en pesos (CLP)">
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-md-4">
+							<label for="costo_medio_horno">Precio por medio horno</label>
+							<input required type="number" name="costo_medio_horno" id="costo_medio_horno"
+								class="form-control" placeholder="Precio en pesos (CLP)">
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-md-4">
+							<label for="costo_horno_completo">Precio por horno completo</label>
+							<input required type="number" name="costo_horno_completo" id="costo_horno_completo"
+								class="form-control" placeholder="Precio en pesos (CLP)">
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-md-12">
+							<label for="observaciones">Observaciones</label>
+							<input required type="text" name="observaciones" id="observaciones" class="form-control"
+								placeholder="Por ejemplo: Nos responsabilizamos por todas las piezas">
+						</div>
+					</div>					
+					<div class="form-group">
+						<input type="submit" value="Continuar" class="btn btn-primary btn-lg">
+					</div>
+				</form>
+			</div>
+		</div>	
+	</div>
+</div>
+<!-- fin sección de formulario -->
+		
+
+{% endblock %}<!DOCTYPE HTML>

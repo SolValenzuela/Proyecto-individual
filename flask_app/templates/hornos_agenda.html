@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block title %}hornos disponibles {% endblock %}
+
+{% block content %}
+
+<!-- sección de formulario -->
+<div class="gtco-section">
+	<div class="gtco-container">
+		<div class="row">
+			<div class="col-md-12 animate-box">
+				<h2 style="margin-top: 50px;">Lista de hornos</h2>
+				
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<table class="table">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">Nombre del taller</th>
+							<th scope="col">Nombre del horno</th>
+							<th scope="col">T° min. °C</th>
+							<th scope="col">T° máx. °C</th>
+							<th scope="col">Alto (cms.)</th>
+							<th scope="col">Ancho (cms.)</th>
+							<th scope="col">Fondo (cms.)</th>
+							<th scope="col">Costo por bandeja</th>
+							<th scope="col">Costo medio horno</th>
+							<th scope="col">Costo horno completo</th>
+							<th scope="col">Observaciones</th>
+							<th scope="col">Fecha de inicio</th>
+							<th scope="col">Hora de inicio</th>
+							<th scope="col">Agenda</th>
+						</tr>
+					</thead>
+					<tbody>
+						
+							{%for horno_agenda in hornos_agendas%}
+						<tr>
+							<td>
+								<a href="/">{{horno_agenda.nombre_taller}}</a>
+							</td>
+							<td>{{horno_agenda.nombre}}</td>
+							<td>{{horno_agenda.temperatura_min}}</td>
+							<td>{{horno_agenda.temperatura_max}}</td>
+							<td>{{horno_agenda.alto}}</td>
+							<td>{{horno_agenda.ancho}}</td>
+							<td>{{horno_agenda.fondo}}</td>
+							<td>{{horno_agenda.costo_bandeja}}</td>
+							<td>{{horno_agenda.costo_medio_horno}}</td>
+							<td>{{horno_agenda.costo_horno_completo}}</td>
+							<td>{{horno_agenda.observaciones}}</td>
+							<td>{{horno_agenda.fecha_inicio}}</td>
+							<td>{{horno_agenda.hora_inicio}}</td>
+							<td><a href="/reserva/horno/{{horno_agenda.horno_id}}" >Ver otras horas disponibles</a></td>
+						</tr>
+						{%endfor%}
+					</tbody>
+				</table>
+			</div>
+			</div>
+			
+		</div>
+
+	</div>
+</div>	
+
+
+<!-- fondo gris claro -->
+<div id="gtco-features-2">
+	<div class="gtco-container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+
+
+
+		</div>
+	</div>
+</div>
+<!-- fin de fondo gris claro -->
+
+
+{% endblock %}
+
+
+
+

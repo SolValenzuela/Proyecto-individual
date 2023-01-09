@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block title %} registro {% endblock %}
+
+{% block content %}
+
+<header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner"
+	style="background-image:url(images/img_bg_1.jpg);">
+	<div class="overlay"></div>
+	<div class="gtco-container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 text-center">
+				<div class="display-t">
+					<div class="display-tc animate-box" data-animate-effect="fadeIn">
+						<h1>Registra en Öfen</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<!-- sección de formulario -->
+<div class="gtco-section">
+	<div class="gtco-container">
+		<div class="row">
+			<div class="col-md-12 animate-box">
+				<h3>El primer paso es que registres tu taller</h3>
+				<h5>Si ya estás registrado <a href="/login">Login</a></h5>
+				<form action="/procesar/usuario" , method="post">
+					{% with messages = get_flashed_messages(category_filter=['register'] ) %}
+					{% if messages %}
+						<div class="text-center text-danger">
+							<h1>Alerta!!!</h1>
+						</div>
+					{% for message in messages %}
+						<div class="alert alert-danger" role="alert">
+							<p>{{message}}</p>
+						</div>
+					{% endfor %}
+					{% endif %}
+				{% endwith %}
+					<div class="row form-group">
+						<div class="col-md-12">
+							<label for="nombre">Nombre</label>
+							<input required type="text" name="nombre" id="nombre" class="form-control"
+								placeholder="Nombre del taller">
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-md-12">
+							<label for="direccion">Direccion</label>
+							<input required type="text" name="direccion" id="direccion" class="form-control"
+								placeholder="Direccion">
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-md-12">
+							<label for="comuna">Comuna</label>
+							<input required type="text" name="comuna" id="comuna" class="form-control"
+								placeholder="Comuna">
+						</div>
+					</div>
+
+					<div class="row form-group">
+						<div class="col-md-12">
+							<label for="email">Email</label>
+							<input required type="email" name="email" id="email" class="form-control"
+								placeholder="Email del taller">
+						</div>
+					</div>
+
+					<div class="row form-group">
+						<div class="col-md-12">
+							<label for="password">Password</label>
+							<input required type="password" name="password" id="password" class="form-control"
+								placeholder="al menos 8 caracteres">
+						</div>
+					</div>
+
+					<div class="row form-group">
+						<div class="col-md-12">
+							<label for="confirmar_password">Confirmar password</label>
+							<input required type="password" name="confirmar_password" id="confirmar_password"
+								class="form-control" placeholder="Ambas password deben coincidir">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<input type="submit" value="Continuar" class="btn btn-primary btn-lg">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- fin de formulario -->
+
+{% endblock %}
+<!DOCTYPE HTML>

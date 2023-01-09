@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %} menor precio {% endblock %}
+
+{% block content %}
+
+<!-- fondo gris claro -->
+<div id="gtco-features-2">
+	<div class="gtco-container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 text-center gtco-heading">	
+				<h2 style="margin-top: 50px;">Hornos según menor precio por bandeja</h2>	
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<table class="table">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">Nombre del taller</th>
+							<th scope="col">Nombre del horno</th>
+							<th scope="col">T° min. °C</th>
+							<th scope="col">T° máx. °C</th>
+							<th scope="col">Alto (cms.)</th>
+							<th scope="col">Ancho (cms.)</th>
+							<th scope="col">Fondo (cms.)</th>
+							<th scope="col">Costo por bandeja</th>
+							<th scope="col">Costo medio horno</th>
+							<th scope="col">Costo horno completo</th>
+							<th scope="col">Observaciones</th>
+							<th scope="col">Fecha de inicio</th>
+							<th scope="col">Hora de inicio</th>
+							<th scope="col">Agenda</th>
+						</tr>
+					</thead>
+					<tbody>
+						
+							{%for precio in precios%}
+						<tr>
+							<td>
+								<a href="/">{{precio.nombre_taller}}</a>
+							</td>
+							<td>{{precio.nombre}}</td>
+							<td>{{precio.temperatura_min}}</td>
+							<td>{{precio.temperatura_max}}</td>
+							<td>{{precio.alto}}</td>
+							<td>{{precio.ancho}}</td>
+							<td>{{precio.fondo}}</td>
+							<td>{{precio.costo_bandeja}}</td>
+							<td>{{precio.costo_medio_horno}}</td>
+							<td>{{precio.costo_horno_completo}}</td>
+							<td>{{precio.observaciones}}</td>
+							<td>{{precio.fecha_inicio}}</td>
+							<td>{{precio.hora_inicio}}</td>
+							<td><a href="/reserva/horno/{{precio.id}}" >Ver otras horas disponibles</a></td>
+						</tr>
+						{%endfor%}
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+	</div>
+</div>
+<!-- fin de fondo gris claro -->
+		
+
+{% endblock %}

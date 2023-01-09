@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %} prueba extends {% endblock %}
+
+{% block content %}
+
+<header id="gtco-header" class="gtco-cover" role="banner" >
+	<div class="overlay">
+	<div class="gtco-container">
+		<div class="row">
+			<div class="col-md-12 col-md-offset-0 text-center">
+				<div class="display-t">
+					<div class="display-tc animate-box" data-animate-effect="fadeIn">
+						<h1>Gracias por reservar</h1>
+						<h3>Hemos enviado los datos de la reserva al mail proporcionado</h3>
+						<h4>Y no olvides subscribirte!</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</header>
+
+		<!-- subscripcion -->
+		<div id="gtco-subscribe">
+			<div class="gtco-container">
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+						<h2>Subscríbete</h2>
+						<p>Recibe nuestro boletín mensual</p>
+					</div>
+				</div>
+				<div class="row animate-box">
+					<div class="col-md-12">
+						<form class="form-inline">
+							<div class="col-md-4 col-sm-4">
+								<div class="form-group">
+									<label for="email" class="sr-only">Email</label>
+									<input type="email" class="form-control" id="email" placeholder="Email">
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4">
+								<div class="form-group">
+									<label for="name" class="sr-only">Nombre</label>
+									<input type="text" class="form-control" id="name" placeholder="Nombre">
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4">
+								<button type="submit" class="btn btn-default btn-block" >Subscribe</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- fin de suscripcion -->
+
+
+
+{% endblock %}

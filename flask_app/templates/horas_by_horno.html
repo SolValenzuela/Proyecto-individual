@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}hornos disponibles {% endblock %}
+
+{% block content %}
+
+<!-- fondo gris claro -->
+<div id="gtco-features-2">
+	<div class="gtco-container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+
+				<h2 style="margin-top: 50px;">Tus hornos y sus horas disponibles</h2>
+				<h4>Para características de tus hornos pincha el nombre</h4>
+				
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<table class="table">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">Nombre del Horno</th>
+							<th scope="col">Fecha</th>
+							<th scope="col">Hora de inicio</th>
+							<th scope="col">Hora de termino</th>
+							<th scope="col">Agregar horas</th>
+							<th scope="col">Eliminar</th>
+						</tr>
+					</thead>
+					<tbody>
+						
+							{%for horario in horarios%}
+						<tr>
+							<td>
+								<a href="/actualiza/horno">{{horario.nombre}}</a>
+							</td>
+							<td>{{horario.fecha_inicio}}</td>
+							<td>{{horario.hora_inicio}}</td>
+							<td>{{horario.hora_termino}}</td>
+							<td><a href="/crear/agenda/{{horario.horno_id}}">Agregar horas</a></td>
+
+							
+							<td><a href="/destroy/agenda/{{horario.id}}" >Eliminar hora</a></td>
+						</tr>
+						{%endfor%}
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+	</div>
+</div>
+<!-- fin de fondo gris claro -->
+
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %} prueba extends {% endblock %}
+
+{% block content %}
+
+
+
+	<!-- fondo gris claro -->
+	<div id="gtco-features-2">
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+					<h2 style="margin-top: 50px;">Lista de hornos del taller</h2>
+				</div>
+			</div>
+			<table class="table">
+				<thead class="thead-light">
+					<tr>
+						<th scope="col">Fecha</th>
+						<th scope="col">Hora de inicio</th>
+						<th scope="col">Hora de término</th>
+						<th scope="col">Reservar</th>
+						<th scope="col">Regresar</th>
+					</tr>
+				</thead>
+				<tbody>
+					{%for hora in horarios%}
+					<tr>
+						<td>{{hora.fecha_inicio}}</td>
+						<td>{{hora.hora_inicio}}</td>
+						<td>{{hora.hora_termino}}</td>
+						<td><a href="/detalles/reserva/{{hora.id}}">Reservar</a></td>
+						<td><a href="/arriendo/horno">Regresar</a></td>
+					</tr>
+					{%endfor%}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+</div>
+<!-- fin de fondo gris claro -->
+
+
+	{% endblock %}
+	
